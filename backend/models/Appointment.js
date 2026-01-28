@@ -8,6 +8,12 @@ const appointmentSchema = new mongoose.Schema({
         service: String,
         price: Number,
         notes: String,
+
+        status: {
+         type: String,
+         default: "pending"
+        }
+
 }, {timestamps: true });
 
 module.exports = mongoose.model("Appointment",appointmentSchema)
