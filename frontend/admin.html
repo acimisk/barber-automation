@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+</head>
+<body>
+
+  <h1>Randevular</h1>
+
+  <ul id="list"></ul>
+
+  <script>
+    fetch("http://localhost:3000/api/appointments")
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById("list");
+
+        data.forEach(a => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            ${a.name} - ${a.service} - ${a.date}
+            <button onclick="deleteAppointment('${a._id}')">Sil</button>
+          `;
+          list.appendChild(li);
+        });
+      });
+
+    function deleteAppointment(id) {
+      fetch("http://localhost:3000/api/appointments/" + id, {
+        method: "DELETE"
+      }).then(() => location.reload());
+    }
+  </script>
+
+</body>
+</html>

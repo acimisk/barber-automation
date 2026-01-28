@@ -28,3 +28,8 @@ exports.getAppointments = async(req,res)=>{
         });
     }
 };
+
+exports.deleteAppointment = async (req, res) => {
+  await Appointment.findByIdAndDelete(req.params.id);
+  res.json({ message: "Silindi" });
+};
