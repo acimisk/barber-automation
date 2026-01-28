@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Barber Home Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b90d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221e10",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "2xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-x-hidden pb-24">
+<!-- Top App Bar -->
+<div class="fixed top-0 left-0 right-0 z-50 flex items-center bg-background-dark/95 backdrop-blur-md p-4 pb-2 justify-between border-b border-white/5">
+<div class="text-white flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center uppercase tracking-widest text-primary">The Gentry</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</div>
+</div>
+<!-- Spacer for fixed header -->
+<div class="h-20"></div>
+<!-- Hero Section -->
+<div class="@container px-4 pt-2">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-end pb-10 p-4 relative overflow-hidden shadow-2xl shadow-black/40" data-alt="Dark moody interior of a vintage barber shop with leather chairs and warm lighting" style='background-image: linear-gradient(to top, rgba(34, 30, 16, 1) 0%, rgba(34, 30, 16, 0.6) 40%, rgba(34, 30, 16, 0.2) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8P1GG9Qpokiup28slfpPfFVCjLJnbL7sbhy-2SUH62bWsKJU8C-WW5zYny0EDqJ4_Y0ldk1eJH-m24v3Kzrsj5F_7kzbKVXLlnPvbRn6LgF_4ND3es9AI01w5Xl5ZekMJIPv2n84ul_MYFbDu5BSD7qk0lFFaYA1_8wKVZoTdnGLlgatTt5Vi_82K5T-54OsG9bZIYmRq3zJDXUePDUK2wi-bPiIg78XwOAPDxYQL9pHiHoCiq-_mdmjesMJS7rSux0wswMEpZXg");'>
+<div class="flex flex-col gap-3 text-center z-10 max-w-md">
+<div class="inline-flex items-center justify-center gap-1.5 px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full mx-auto mb-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-medium text-white/90 uppercase tracking-wide">Open Now</span>
+</div>
+<h1 class="text-white text-4xl font-black leading-[1.1] tracking-[-0.033em] @[480px]:text-5xl">
+                    Precision <span class="text-primary">&amp;</span> Style
+                </h1>
+<h2 class="text-gray-300 text-sm font-medium leading-relaxed px-4 @[480px]:text-base">
+                    Master craftsmanship for the modern gentleman. Experience the art of grooming redefined.
+                </h2>
+</div>
+<button onclick="window.location.href='booking.html'" class="relative z-10 flex w-full max-w-[280px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-6 bg-primary hover:bg-[#d9a50b] transition-colors text-background-dark text-base font-bold leading-normal tracking-[0.015em] shadow-[0_0_20px_rgba(242,185,13,0.3)]">
+<span class="truncate">Book Appointment</span>
+</button>
+</div>
+</div>
+<!-- Quick Action / Status Panel -->
+<div class="p-4 @container -mt-2">
+<div class="flex flex-col items-start justify-between gap-4 rounded-xl border border-white/10 bg-white/5 p-5 @[480px]:flex-row @[480px]:items-center backdrop-blur-sm relative overflow-hidden group">
+<!-- Decorative gradient orb -->
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-500"></div>
+<div class="flex items-center gap-4 z-10 w-full">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="flex flex-col gap-0.5 flex-1">
+<p class="text-white/60 text-xs font-bold uppercase tracking-wider">Next Available Slot</p>
+<p class="text-white text-base font-bold leading-tight">Today, 3:00 PM <span class="text-primary font-normal text-sm ml-1">with Marco</span></p>
+</div>
+<button onclick="window.location.href='booking.html'" class="shrink-0 flex items-center justify-center rounded-full h-10 w-10 bg-primary text-background-dark hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Popular Services Headline -->
+<div class="flex items-center justify-between px-5 pt-4 pb-2">
+<h2 class="text-white text-[22px] font-bold leading-tight">Popular Services</h2>
+<a class="text-primary text-sm font-bold hover:text-white transition-colors" href="#">View All</a>
+</div>
+<!-- Carousel -->
+<div class="flex overflow-y-auto hide-scrollbar pb-4 pl-4">
+<div class="flex items-stretch gap-4 pr-4">
+<!-- Card 1 -->
+<div class="flex flex-col gap-3 min-w-[160px] w-[160px] group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-center bg-no-repeat bg-cover rounded-xl flex flex-col relative overflow-hidden shadow-lg border border-white/5" data-alt="Barber giving a precise fade haircut to a client" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNpBpDFIK2kDlggT4bR40W5COYf5_hrdOp1x3V4pRJ4Hm_z-i1qi0xRa9pSP8j_ymbtE2Mn1t2B2QfL-tF0y3t71YuG5D7GbOZzHY1BYvFpH9ML8XMROSSotPQxL-EkSnV5cc8acgTwXqLGu6rPsFTOWT3mwjbgfrR2WYjVFfHOzYmaUpOUo_-Aq-BnFsfXohYc-t2fZKTZgFNqCI2lvtEmgiVQ1I4XdP-3Jfjcu2e5luCxz8QXGcHuyTxmg3o5GaWyrVgx-4XMts");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-3 left-3 right-3">
+<span class="inline-block px-2 py-1 bg-background-dark/80 backdrop-blur-sm text-primary text-xs font-bold rounded-lg">$45</span>
+</div>
+</div>
+<div>
+<p class="text-white text-base font-bold leading-tight group-hover:text-primary transition-colors">Signature Cut</p>
+<p class="text-white/40 text-xs font-normal leading-normal mt-1">45 mins • Hair &amp; Wash</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-3 min-w-[160px] w-[160px] group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-center bg-no-repeat bg-cover rounded-xl flex flex-col relative overflow-hidden shadow-lg border border-white/5" data-alt="Close up of a hot towel shave treatment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-gzkVFv0ZX3A7mpo5AndpOoNuw0IVSoi18Znv8an_Xs71pAgTVv75kllyugKnY0PV4ss5AWWB5bOkb1TJ5DUqRXapU2ZZ0kg4g7rdK4PLbrFemt8rFzLTaq388dHnMa8nhuPDXjeLamw6vRpOy0CsJRqAxawFkQetE0EhDjV_GhPfXWA7SI40vHvh-HJZIxxZ7q92JojTkmEKV9CpyTC0D63XMvPomwOAI5v-KRJmb8ZlMLsZW9eu2rkSnL2RjXPZ9kO0vVWNtfI");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-3 left-3 right-3">
+<span class="inline-block px-2 py-1 bg-background-dark/80 backdrop-blur-sm text-primary text-xs font-bold rounded-lg">$30</span>
+</div>
+</div>
+<div>
+<p class="text-white text-base font-bold leading-tight group-hover:text-primary transition-colors">Hot Towel Shave</p>
+<p class="text-white/40 text-xs font-normal leading-normal mt-1">30 mins • Classic Shave</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-3 min-w-[160px] w-[160px] group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-center bg-no-repeat bg-cover rounded-xl flex flex-col relative overflow-hidden shadow-lg border border-white/5" data-alt="Man getting his beard trimmed and shaped" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1-qOHquiazfuQpzGvOnmwHkKs-5z4PX7DOQWYj-RMo3LsFwYCFrwr5HQLx5712uG9-KiGMHDJTALRO2RXrAt6ohvymqJjzgDIA4Fc8jqYSgJpPYCO9OxsexZ2jt8g5ZM07iHwx2P8NjJ2REzvEKE-Sbk-qfGlnetUmqPl5K01eJrfJ58vDvGtB8pb0GqUn1gGeTjIVcHw6bIBDUwCUuJj3vg3dbnYb_L5Cm_TvbcElQVesjlLapxHHosPSpBqat1xs7-HS3jzGnw");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-3 left-3 right-3">
+<span class="inline-block px-2 py-1 bg-background-dark/80 backdrop-blur-sm text-primary text-xs font-bold rounded-lg">$25</span>
+</div>
+</div>
+<div>
+<p class="text-white text-base font-bold leading-tight group-hover:text-primary transition-colors">Beard Sculpt</p>
+<p class="text-white/40 text-xs font-normal leading-normal mt-1">20 mins • Trim &amp; Oil</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Meet the Barbers Section (Extra) -->
+<div class="px-5 pt-2 pb-6">
+<h2 class="text-white text-[22px] font-bold leading-tight mb-4">Top Barbers</h2>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-4 bg-white/5 p-3 rounded-xl border border-white/5">
+<div class="h-14 w-14 rounded-full bg-cover bg-center border-2 border-primary/30" data-alt="Portrait of Marco the barber" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlZWxd1UHRpBgLRr7ERQd1He-YnrrbSTGZzS7FVSOZPx5GIMHjYtNn9Pvkk8KY8Nwv9cZ6kvU0i4iJLXHKiJJOUXHdaYWoA3HU9oS90KNefE2i-6SGD3rMKTbe6ucJGFxGkgf8k2QLzGvWkin8C3kLZfRsnHbr6vLWpg8cqF0okseFcQPqdFQiEQ0KY0GLIZRfl02ZMppkloZzJqhYX_3NKJ0afFeswdPxHXhyJogCUYGR7dEIVh6NPWnXwNL078Unq0SWwwJXLro");'>
+</div>
+<div class="flex-1">
+<h3 class="text-white font-bold">Marco Rossi</h3>
+<div class="flex items-center gap-1 text-primary text-sm">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span>4.9</span>
+<span class="text-white/40 text-xs ml-1">(120 reviews)</span>
+</div>
+</div>
+<button onclick="window.location.href='booking.html'" class="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-bold hover:bg-white/20">Book</button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-background-dark/95 backdrop-blur-lg border-t border-white/5 pb-safe pt-2 px-6">
+<div class="flex justify-between items-center h-16">
+<button class="flex flex-col items-center gap-1 text-primary w-16">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-white/40 hover:text-white transition-colors w-16">
+<span class="material-symbols-outlined text-2xl">content_cut</span>
+<span class="text-[10px] font-medium">Services</span>
+</button>
+<!-- Floating Center Button Effect -->
+<button class="flex items-center justify-center -mt-8 h-14 w-14 rounded-full bg-primary text-background-dark shadow-[0_4px_12px_rgba(242,185,13,0.4)] hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">calendar_month</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-white/40 hover:text-white transition-colors w-16">
+<span class="material-symbols-outlined text-2xl">photo_library</span>
+<span class="text-[10px] font-medium">Gallery</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-white/40 hover:text-white transition-colors w-16">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+<!-- Safe area spacing for iOS home indicator -->
+<div class="h-4"></div>
+</div>
+</body></html>

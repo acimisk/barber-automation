@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Barber Appointment Booking</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#f2b90d",
+                "primary-hover": "#d9a50b",
+                "background-light": "#f8f8f5",
+                "background-dark": "#221e10",
+                "surface-dark": "#2c2616",
+            },
+            fontFamily: {"display": ["Manrope", "sans-serif"]},
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+        },
+    },
+}
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+</style>
+<style>body { min-height: max(884px, 100dvh); }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-background-dark">
+
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark overflow-hidden">
+
+<!-- Top App Bar -->
+<div class="flex items-center px-4 py-4 justify-between sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-black/5 dark:border-white/5">
+<button onclick="window.location.href='index.html'" class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-black dark:text-white">arrow_back</span>
+</button>
+<h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Book Appointment</h2>
+<div class="size-10"></div>
+</div>
+
+<div class="flex-1 overflow-y-auto no-scrollbar pb-32">
+
+<!-- Service Selection -->
+<div class="pt-6 pb-2">
+<h2 class="text-black dark:text-white tracking-tight text-[22px] font-bold leading-tight px-6 text-left mb-4">Select Service</h2>
+<div class="px-6 flex flex-col gap-3">
+  <div class="group relative flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-all shadow-lg shadow-primary/5 border border-gray-200 bg-white dark:border-white/10 dark:bg-white/5 border-2 border-primary bg-surface-dark/50" data-service="Haircut" data-price="30">
+    <div class="flex items-center gap-4">
+      <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-300 service-icon">
+        <span class="material-symbols-outlined">content_cut</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-base font-bold text-black dark:text-white">Haircut</span>
+        <span class="text-xs text-gray-500 dark:text-gray-400">45 mins • Styling included</span>
+      </div>
+    </div>
+    <div class="flex flex-col items-end">
+      <span class="text-lg font-bold text-primary">$30</span>
+      <div class="size-5 rounded-full border-2 border-primary flex items-center justify-center bg-primary mt-1 service-indicator">
+        <span class="material-symbols-outlined text-background-dark text-[14px] font-bold service-indicator-icon">check</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="group relative flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-all shadow-lg shadow-primary/5 border border-gray-200 bg-white dark:border-white/10 dark:bg-white/5" data-service="Beard Trim" data-price="20">
+    <div class="flex items-center gap-4">
+      <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-300 service-icon">
+        <span class="material-symbols-outlined">face_2</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-base font-bold text-black dark:text-white">Beard Trim</span>
+        <span class="text-xs text-gray-500 dark:text-gray-400">30 mins • Hot towel</span>
+      </div>
+    </div>
+    <div class="flex flex-col items-end">
+      <span class="text-lg font-bold text-black dark:text-white">$20</span>
+      <div class="size-5 rounded-full border-2 border-gray-300 flex items-center justify-center mt-1 service-indicator">
+        <span class="material-symbols-outlined text-background-dark text-[14px] font-bold service-indicator-icon" style="display:none">check</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="group relative flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-all shadow-lg shadow-primary/5 border border-gray-200 bg-white dark:border-white/10 dark:bg-white/5" data-service="Full Package" data-price="45">
+    <div class="flex items-center gap-4">
+      <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-300 service-icon">
+        <span class="material-symbols-outlined">diamond</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-base font-bold text-black dark:text-white">Full Package</span>
+        <span class="text-xs text-gray-500 dark:text-gray-400">1h 15m • All inclusive</span>
+      </div>
+    </div>
+    <div class="flex flex-col items-end">
+      <span class="text-lg font-bold text-black dark:text-white">$45</span>
+      <div class="size-5 rounded-full border-2 border-gray-300 flex items-center justify-center mt-1 service-indicator">
+        <span class="material-symbols-outlined text-background-dark text-[14px] font-bold service-indicator-icon" style="display:none">check</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Date & Time (Örnek olarak sadece placeholder) -->
+<div class="pt-6 px-6">
+<h2 class="text-black dark:text-white tracking-tight text-[22px] font-bold leading-tight text-left mb-2">Date & Time</h2>
+<input type="date" id="date" class="w-full p-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-surface-dark text-black dark:text-white mb-4"/>
+<input type="time" id="time" class="w-full p-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-surface-dark text-black dark:text-white"/>
+</div>
+
+<!-- Client Details -->
+<div class="pt-8 px-6">
+<h2 class="text-black dark:text-white tracking-tight text-[22px] font-bold leading-tight mb-4">Your Details</h2>
+<div class="flex flex-col gap-4">
+<input id="name" placeholder="Full Name" class="w-full p-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-surface-dark text-black dark:text-white"/>
+<input id="phone" placeholder="Phone Number" class="w-full p-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-surface-dark text-black dark:text-white"/>
+<textarea id="notes" placeholder="Notes (Optional)" class="w-full p-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-surface-dark text-black dark:text-white"></textarea>
+</div>
+</div>
+
+<!-- Sticky Bottom Action -->
+<div class="absolute bottom-0 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-xl border-t border-black/5 dark:border-white/5 p-4 z-30">
+<div class="flex items-center justify-between mb-3 px-1">
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">Total</span>
+<span id="totalPrice" class="text-xl font-bold text-black dark:text-white">$30.00</span>
+</div>
+<button id="confirmBtn" class="w-full h-14 rounded-full bg-primary hover:bg-primary-hover active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/25">
+<span class="text-background-dark text-lg font-bold">Confirm Booking</span>
+<span class="material-symbols-outlined text-background-dark">arrow_forward</span>
+</button>
+</div>
+</div>
+
+<script>
+const serviceDivs = document.querySelectorAll('[data-service]');
+let selectedService = "Haircut";
+let selectedPrice = "30";
+const totalPriceEl = document.getElementById("totalPrice");
+
+// Service seçimi ve UI update
+serviceDivs.forEach(div => {
+  div.addEventListener('click', () => {
+    serviceDivs.forEach(d => {
+      d.classList.remove('border-2','border-primary','bg-surface-dark/50');
+
+      const indicator = d.querySelector('.service-indicator');
+      const icon = d.querySelector('.service-indicator-icon');
+      const iconCircle = d.querySelector('.service-icon');
+      if (indicator) {
+        indicator.classList.remove('border-primary','bg-primary');
+        indicator.classList.add('border-gray-300');
+      }
+      if (icon) {
+        icon.style.display = 'none';
+      }
+      if (iconCircle) {
+        iconCircle.classList.remove('bg-primary','text-background-dark');
+        iconCircle.classList.add('bg-gray-100','dark:bg-white/10','text-gray-600','dark:text-gray-300');
+      }
+    });
+    div.classList.add('border-2','border-primary','bg-surface-dark/50');
+
+    const selectedIndicator = div.querySelector('.service-indicator');
+    const selectedIcon = div.querySelector('.service-indicator-icon');
+    const selectedIconCircle = div.querySelector('.service-icon');
+    if (selectedIndicator) {
+      selectedIndicator.classList.remove('border-gray-300');
+      selectedIndicator.classList.add('border-primary','bg-primary');
+    }
+    if (selectedIcon) {
+      selectedIcon.style.display = 'block';
+    }
+    if (selectedIconCircle) {
+      selectedIconCircle.classList.remove('bg-gray-100','dark:bg-white/10','text-gray-600','dark:text-gray-300');
+      selectedIconCircle.classList.add('bg-primary','text-background-dark');
+    }
+
+    selectedService = div.dataset.service;
+    selectedPrice = div.dataset.price;
+
+    totalPriceEl.textContent = "$" + selectedPrice + ".00";
+  });
+});
+
+// Varsayılan seçim: Haircut seçili ve simgeler sarı
+const defaultServiceDiv = document.querySelector('[data-service="Haircut"]');
+if (defaultServiceDiv) {
+  defaultServiceDiv.click();
+}
+
+// Confirm buton
+document.getElementById("confirmBtn").addEventListener("click", async () => {
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const notes = document.getElementById("notes").value;
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("time").value;
+
+  if(!name || !phone || !date || !time){
+    alert("Please fill all required fields");
+    return;
+  }
+
+  const data = { name, phone, date, time, service: selectedService, price: selectedPrice, notes };
+  console.log(data);
+
+  try {
+    const res = await fetch("http://localhost:3000/api/appointments", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+    const result = await res.json();
+    if(res.ok){
+      window.location.href = "success.html";
+    } else {
+      alert(result.message);
+    }
+  } catch(err){
+    alert("Error connecting to server");
+    console.error(err);
+  }
+});
+</script>
+
+</body>
+</html>
