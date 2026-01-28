@@ -43,7 +43,7 @@ app.get("/api/appointments", async (req,res)=>{
     res.status(500).json({message:"Hata oluştu", error: err})
   }
 });
-console.log("test commit")
+console.log("test commit1")
 const PORT = process.env.PORT;
 
 app.listen(PORT, ()=>{
