@@ -30,6 +30,13 @@ exports.getAppointments = async(req,res)=>{
 };
 
 exports.deleteAppointment = async (req, res) => {
-  await Appointment.findByIdAndDelete(req.params.id);
-  res.json({ message: "Silindi" });
+    const appointmentID = req.params.id;
+    const deleted = await Appointment.findByIdAndDelete(appointmentID);
+    
+     if (!deleted) {
+    return res.status(404).json({
+      message: "Böyle bir randevu bulunamadı"
+        });
+    }
+    res.json({ message: `${appointmentID} ID'li randevu silindi` });
 };
