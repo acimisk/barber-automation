@@ -10,7 +10,7 @@ exports.createAppointment = async (req,res)=> {
         });
     } catch(err){
         res.status(500).json({
-            message:"Hata oluştu",
+            message:"Hata oluştu!",
             error: err.message
         });
     }
