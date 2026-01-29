@@ -9,7 +9,8 @@ exports.login = async (req,res) =>{
 
     if(!admin) return res.status(401).json({message:"Hatalı bilgiler"})
 
-    const isMatch = await bcrypt.compare({ message:"Hatalı bilgiler"})
+    const isMatch = await bcrypt.compare(password,admin.password);
+    if(!isMatch) return res.status(401).json({ message:"Hatalı bilgiler"});
 
     const token = jwt.sign(
         { id: admin._id},
